@@ -11,15 +11,15 @@ Cuando la puerta se cierre esta deberá de dejar de sonar y regresar al estado d
 
 Programas usados
 -----------------
-+Arduino IDE
++ Arduino IDE
 
 Materiales
 ------------
 
-+Protoboard
-+Arduino UNO
-+Buzzer
-+Reed switch
-+5 resistencias de 220 ohmios
-+2 LED
-+Botón
++ Protoboard
++ Arduino UNO
++ Buzzer
++ Reed switch
++ 5 resistencias de 220 ohmios
++ 2 LED
++ Botón
