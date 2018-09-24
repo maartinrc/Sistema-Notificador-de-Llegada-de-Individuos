@@ -3,21 +3,27 @@ Instituto Tecnologico de Leon
 Jose Martin Ruiz Coss
 Sistemas Programables
 */
-/*int reed = 1;
-boolean alarmaEncendida = false;*/
+int reed = 2;
+boolean alarmaEncendida = false;
 //asignamos pines
 int led = 5;
 int buzzer = 4;
 void setup() {
-//pinMode(reed,INPUT);
+pinMode(reed,INPUT);
 pinMode(led,OUTPUT);
 pinMode(buzzer,OUTPUT);
 
 }
 
 void loop() {
-noTone(buzzer);
-//prendeYSuena(); // metodo que ejecuta el funcionamiento de la alarma con un led
+if(digitalRead(reed)==HIGH){//if que cuando entra, activa una bandera 
+  alarmaEncendida = true;
+}
+
+if(alarmaEncendida){// si la bandera se activa, entra a este if
+prendeYSuena(); // metodo que ejecuta el funcionamiento de la alarma con un led
+}
+
 }
 
 void prendeYSuena(){
