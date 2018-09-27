@@ -16,11 +16,11 @@ Sistema Notificador de LLegada de Individuos
 ### Profesor:
 #### Carlos Rafael Levy Rojas
 
-#####León, Guanajuato 26 de Septiembre de 2018
+##### León, Guanajuato 26 de Septiembre de 2018
 
 
 
->Creado por: José Martín Ruíz Coss.
+
 
 Funcionamiento del proyecto
 ---------------------
@@ -48,7 +48,7 @@ Materiales
 
 Diagrama del circuito
 ---------------------
-
+![alt tag](https://github.com/maartinrc/Sistema-Notificador-de-Llegada-de-Individuos/blob/master/DiagramaPuerta.png)
 
 
 
@@ -56,13 +56,15 @@ Diagrama del circuito
 ## Resultados
 <table>
 	<tr>
-		<td>
-				
-					
-		</td>
+	<td><img src=https://github.com/maartinrc/Sistema-Notificador-de-Llegada-de-Individuos/blob/master/evidencia1.jpg></td>
+	<td><img src=https://github.com/maartinrc/Sistema-Notificador-de-Llegada-de-Individuos/blob/master/evidencia2.jpg></td>
+	<td><img src=https://github.com/maartinrc/Sistema-Notificador-de-Llegada-de-Individuos/blob/master/evidencia3.jpg></td>
+
 	</tr>
 
 </table>
 
 
+
+>Creado por: José Martín Ruíz Coss.
 
