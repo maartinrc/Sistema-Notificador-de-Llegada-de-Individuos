@@ -6,7 +6,7 @@
 
 #include <avr/sleep.h>
 int reed = 2;
-boolean alarmaEncendida = false;
+boolean alarmaEncendida = false;//no se declara como variable volatil porque la tengo como variable exclusiva para la interrupción
 //asignamos pines
 int led = 5;
 int buzzer = 4;
@@ -17,8 +17,7 @@ void setup() {
   pinMode(led, OUTPUT);
   pinMode(buzzer, OUTPUT);
   pinMode(btn,INPUT);
-  attachInterrupt(digitalPinToInterrupt(reed), prendeYSuena, RISING);//interrupcion por hardware para encender la alarma
-  attachInterrupt(digitalPinToInterrupt(btn), escucha, RISING);//interrupcion por hardware para apagar la alarma
+  attachInterrupt(digitalPinToInterrupt(reed), cambio,CHANGE);//interrupcion por hardware para encender/apagar la alarma
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 }
 
@@ -26,13 +25,14 @@ void loop() {
   if (!alarmaEncendida) {
     duerme();
   }
-  if (digitalRead(reed) == HIGH) { //if que cuando entra, activa una bandera  y se desactiva el modo de bajo consumo
+  if (digitalRead(reed) == HIGH) { //if que cuando entra, activa una bandera  y se desactiva el modo de bajo consumo 
     sleep_disable();// Despertamos el arduino
-    detachInterrupt(reed);// quitamos la interupcion del reed switch para que no se active varias veces
-    alarmaEncendida = true;
+    alarmaEncendida = false;
+    
   }
   if (alarmaEncendida) { // si la bandera se activa, entra a este if
     prendeYSuena(); // metodo que ejecuta el funcionamiento de la alarma con un led
+    
   }
 
 }
@@ -55,10 +55,6 @@ void duerme() {//encender ahorro de energia
   sleep_mode();
 }
 
-void escucha(){//regresa interrupcion al reed switch y apaga la alarma
-    if(digitalRead(btn) == HIGH){
-        attachInterrupt(digitalPinToInterrupt(reed), prendeYSuena, RISING);
-     alarmaEncendida = false;
-
-    }
+void cambio(){
+alarmaEncendida ^= true;// switch a variable
 }
